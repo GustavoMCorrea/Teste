@@ -10,7 +10,7 @@ public class Imc {
         double quadrado = Math.pow(getAltura(), 2);
         double imc = getPeso() / quadrado;
 
-        if (getSexo().equals("Feminino")) {
+        if (getSexo().equals("F")) {
             if (imc < 19.1) {
                 this.resultado = "Abaixo do peso";
             } else {
@@ -81,7 +81,7 @@ public class Imc {
 
     public void setSexo(String sexo) {
 
-        if (!(sexo.equals("Feminino") || sexo.equals("Masculino"))) {
+        if (!(sexo.equals("F") || sexo.equals("M"))) {
             throw new IllegalArgumentException("Sexo inválido");
         }
         this.sexo = sexo;
