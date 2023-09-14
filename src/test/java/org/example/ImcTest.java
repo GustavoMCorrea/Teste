@@ -51,4 +51,45 @@ class ImcTest {
         imc.setSexo("F");
         assertEquals("Obeso", imc.calcularImc());
     }
+
+    // Masculino
+
+    @Test
+    void deveRetornarMasculinoAbaixoPeso(){
+        imc.setPeso(52.74);
+        imc.setAltura(1.60);
+        imc.setSexo("M");
+        assertEquals("Abaixo do peso", imc.calcularImc());
+    }
+    @Test
+    void deveRetornarMasculinoPesoNormal(){
+        imc.setPeso(67.33);
+        imc.setAltura(1.60);
+        imc.setSexo("M");
+        assertEquals("No peso normal", imc.calcularImc());
+    }
+
+    @Test
+    void deveRetornarMasculinoMarginalmenteAcimaDoPeso(){
+        imc.setPeso(70.91);
+        imc.setAltura(1.60);
+        imc.setSexo("M");
+        assertEquals("Marginalmente acima do peso", imc.calcularImc());
+    }
+
+    @Test
+    void deveRetornarMasculinoAcimaDoPesoIdeal(){
+        imc.setPeso(79.36);
+        imc.setAltura(1.60);
+        imc.setSexo("M");
+        assertEquals("Acima do peso ideal", imc.calcularImc());
+    }
+
+    @Test
+    void deveRetornarMasculinoObeso(){
+        imc.setPeso(79.62);
+        imc.setAltura(1.60);
+        imc.setSexo("M");
+        assertEquals("Obeso", imc.calcularImc());
+    }
 }
